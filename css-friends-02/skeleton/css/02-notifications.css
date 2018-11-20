@@ -16,3 +16,7 @@
 .w3-badge:hover{
   background-color: red;
 }
+
+.notifications-dropdown li:hover{
+  background-color: grey;
+}
