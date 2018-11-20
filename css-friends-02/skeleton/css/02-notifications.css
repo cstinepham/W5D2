@@ -1,0 +1,18 @@
+/* PHASE 2: Notifications */
+
+.w3-badge{
+  background-color:#000;
+  color: #fff;
+  display:inline-block;
+  width: 10px;
+  height: 25px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:3px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.w3-badge:hover{
+  background-color: red;
+}
