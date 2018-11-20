@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
   
   def create
-    user = user.find_by_credentials(params[:user][:username], params[:user][:password])
+    user = User.find_by_credentials(params[:user][:username], params[:user][:password])
     if user
       log_in(user)
-      #redirect_to
+      redirect_to subs_url
     else
       flash.now[:errors] = ['Invalid Credentials']
       render :new
