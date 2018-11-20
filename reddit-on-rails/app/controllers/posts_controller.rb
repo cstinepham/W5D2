@@ -8,12 +8,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.sub_id = params[:sub_id]
+    @post.author_id = current_user.id
     
     if @post.save
       redirect_to sub_url(@post.sub_id)
     else
-      flash.now[:errors] = @post.errors.full_messages
-      render :new
+      flash[:errors] = @post.errors.full_messages
+      redirect_to sub_url(@post.sub_id)
     end
   end
   

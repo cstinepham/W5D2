@@ -1,0 +1,2 @@
+<h2> <a href="<%= post_url(@post) %>"><%= @post.title %></a>
+by <%= User.find(@post.author_id).username %> </h2>

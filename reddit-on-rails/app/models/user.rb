@@ -18,13 +18,14 @@ class User < ApplicationRecord
   
   has_many :subs,
   foreign_key: :mod_id,
-  class_name: :Sub
+  class_name: :Sub,
+  inverse_of: :moderator
   
   has_many :posts,
   foreign_key: :author_id,
-  class_name: :Post
+  class_name: :Post,
+  inverse_of: :author
     
-  
   after_initialize :ensure_session_token
   
   def self.find_by_credentials(username, password)
