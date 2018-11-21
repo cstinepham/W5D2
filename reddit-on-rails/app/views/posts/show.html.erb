@@ -6,5 +6,8 @@ Content:
 <br>
 Subs:
 
-<%= @post.sub_ids %>
-
+<ul>
+<% @post.subs.each do |sub| %>
+  <li><a href="<%= sub_url(sub) %>"><%= Sub.find(sub.id).title%></a></li>
+<% end %>
+</ul>
