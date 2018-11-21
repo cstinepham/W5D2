@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   
   resources :subs, except: :destroy
   resources :posts, only: [:new, :create, :edit, :update, :show, :destroy]
+  resources :comments, only: :create
   
 end
