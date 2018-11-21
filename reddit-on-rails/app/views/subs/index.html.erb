@@ -1,9 +1,21 @@
+<div class = "border">
+<a href="<%= new_sub_url %>">Create a new sub!</a>
+
 <h1>All the subs!</h1>
 
 <% @subs.each do |sub| %>
   <ul>
-    <li> <a href="<%= sub_url(sub) %>"><%= sub.title %></a> </li>
+    <li> <a href="<%= sub_url(sub) %>"><%= sub.title %></a>
+      <form action="<%= edit_sub_url(sub) %>" method="post">
+        <input type="hidden" name="_method" value="get">
+        <input type="submit" name="" value="Edit Sub">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      </form> 
+
+    </li>
+    
   </ul>
 <% end %>
 
-<a href="<%= new_sub_url %>">Create a new sub!</a>
+</div>
+

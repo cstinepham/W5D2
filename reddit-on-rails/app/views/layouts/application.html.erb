@@ -10,8 +10,10 @@
   </head>
 
   <body>
+    <a href=" <%= subs_url %>">HOME PAGE</a>
+    <br><br>
     <% if logged_in? %>
-        <%= current_user.username %>
+        <h2> Welcome, <%= current_user.username %></h2>
     
         <form action="<%= session_url %>" method="post">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
